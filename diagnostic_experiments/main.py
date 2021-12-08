@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
 
     parser.add_argument('--multi_option', help="multi updates", default=False, action='store_true')
-    parser.add_argument('--eta', help="Lambda for EOC", type=float, default=1.0)
+    parser.add_argument('--eta', help="Multi-updates hypereparameter", type=float, default=0.3)
     parser.add_argument('--new_randomness', help="new degree of randomness", type=float, default=0.45)
 
     args = parser.parse_args()
