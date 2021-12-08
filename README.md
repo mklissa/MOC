@@ -33,7 +33,7 @@ virtualenv moc_cc --python=python3
 source moc_cc/bin/activate
 pip install tensorflow==1.12.0 
 cd continuous_control
-pip install -e . (in the main directory)
+pip install -e . 
 pip install gym==0.9.3
 pip install mujoco-py==0.5.1
 ```
@@ -45,24 +45,43 @@ python run_mujoco.py --switch --nointfc --env AntWalls --eta 0.9 --mainlr 8e-5 -
 ```
 
 
-## Continuous Control (MuJoCo)
+## Maze Navigation (MiniWorld)
 
 #### Installation
 
 ```
 virtualenv moc_vision --python=python3
 source moc_vision/bin/activate
-pip install tensorflow==1.12.0 
-cd continuous_control
-pip install -e . (in the main directory)
-pip install gym==0.9.3
-pip install mujoco-py==0.5.1
+pip install tensorflow==1.13.1
+cd vision_miniworld
+pip install -e .
+pip install gym==0.15.4
 ```
+
 #### Launch
 
 ```
-cd baselines/ppoc_int
-python run_mujoco.py --switch --nointfc --env AntWalls --eta 0.9 --mainlr 8e-5 --intlr 8e-5 --piolr 8e-5
+cd baselines/
+# Run agent in first task
+python run.py --alg=ppo2_options --env=MiniWorld-WallGap-v0 --num_timesteps 2500000 --save_interval 1000  --num_env 8 --noptions 4 --eta 0.7
+
+# Load and run agent in transfer task
+python run.py --alg=ppo2_options --env=MiniWorld-WallGapTransfer-v0 --load_path path/to/model --num_timesteps 2500000 --save_interval 1000  --num_env 8 --noptions 4 --eta 0.7
 ```
 
 
+## Cite
+
+Please consider citing our work.
+
+
+```
+@inproceedings{
+klissarov2021flexible,
+title={Flexible Option Learning},
+author={Martin Klissarov and Doina Precup},
+booktitle={Thirty-Fifth Conference on Neural Information Processing Systems},
+year={2021},
+url={https://openreview.net/forum?id=L5vbEVIePyb}
+}
+```
