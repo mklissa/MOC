@@ -5,8 +5,8 @@ This repository contains code for the paper [Flexible Option Learning](https://a
 
 Contents:
 - [FourRooms Experiments](#tabular-experiments-four-rooms)
-- [Continuous Control Experiments](#control-experiments-tmaze--halfcheetah)
-- [Visual Navigation Experiments](#visual-navigation-experiments-miniworld)
+- [Continuous Control Experiments](#continuous-control-mujoco)
+- [Visual Navigation Experiments](#maze-vavigation-miniworld)
 
 
 
