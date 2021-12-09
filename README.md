@@ -73,7 +73,7 @@ python run.py --alg=ppo2_options --env=MiniWorld-WallGapTransfer-v0 --load_path 
 
 ## Cite
 
-If you find this work useful to you, please consider adding you to your references. 
+If you find this work useful to you, please consider adding us to your references. 
 
 
 ```
