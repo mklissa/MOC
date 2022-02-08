@@ -10,7 +10,7 @@ try:
     from mpi4py import MPI
 except ImportError:
     MPI = None
-from baselines.ppo2_options_new.runner import Runner
+from baselines.ppo2_options.runner import Runner
 from numpy.random import RandomState
 
 def constfn(val):
